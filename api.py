@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, request, redirect, url_for, jsonify, json
 from forms import ToDo
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 
 
 
@@ -11,6 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tmp/test.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 port = int(os.environ.get('PORT', 33507))
+CORS(app)
 
 class ToDoModel(db.Model):
     id = db.Column(db.Integer, primary_key = True)

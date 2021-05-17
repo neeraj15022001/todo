@@ -17,6 +17,7 @@ MarkupSafe = "==2.0.0"
 SQLAlchemy = "==1.4.15"
 Werkzeug = "==2.0.0"
 WTForms = "==2.3.3"
+flask-cors = "*"
 
 [dev-packages]
 
