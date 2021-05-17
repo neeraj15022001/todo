@@ -9,6 +9,7 @@ app.config["SECRET_KEY"] = 'password'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tmp/test.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
+port = int(os.environ.get('PORT', 33507))
 
 class ToDoModel(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -46,4 +47,4 @@ def show(id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=port)
