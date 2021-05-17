@@ -6,7 +6,7 @@ export const Show = () => {
     const [todo, setTodo] = useState([])
 
     useEffect(() => {
-        fetch(`/api/${id}`)
+        fetch(`https://todoflaskneeraj.herokuapp.com/api/${id}`)
         .then(response => response.json())
         .then(data => setTodo(data))
     },[id])

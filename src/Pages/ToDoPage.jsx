@@ -8,7 +8,7 @@ export const ToDoPage = () => {
     const [addToDo, setAddToDo] = useState("")
 
     useEffect(() => {
-        fetch('/api')
+        fetch('https://todoflaskneeraj.herokuapp.com/api')
         .then((response) => {
             if(response.ok) {
                 return response.json()
@@ -23,7 +23,7 @@ export const ToDoPage = () => {
     }
 
     const handleFormSubmit = () => {
-        fetch("/api/create", {
+        fetch("https://todoflaskneeraj.herokuapp.com/api/create", {
             method : "POST",
             body : JSON.stringify({
                 content:addToDo 
@@ -40,7 +40,7 @@ export const ToDoPage = () => {
     }
 
     const getLatestToDos = () => {
-        fetch('/api').then(response => {
+        fetch('https://todoflaskneeraj.herokuapp.com/api').then(response => {
             if(response.ok) {
                 return response.json()
             }
